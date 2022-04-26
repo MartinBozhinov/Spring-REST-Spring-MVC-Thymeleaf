@@ -19,12 +19,10 @@ public class Product extends BaseEntity {
 
     public Product() {
     }
-
     @Column(name = "name",unique = true)
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -32,7 +30,6 @@ public class Product extends BaseEntity {
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
@@ -40,7 +37,6 @@ public class Product extends BaseEntity {
     public BigDecimal getPrice() {
         return price;
     }
-
     public void setPrice(BigDecimal price) {
         this.price = price;
     }
@@ -48,7 +44,6 @@ public class Product extends BaseEntity {
     public LocalDateTime getNeededBefore() {
         return neededBefore;
     }
-
     public void setNeededBefore(LocalDateTime neededBefore) {
         this.neededBefore = neededBefore;
     }
@@ -56,7 +51,6 @@ public class Product extends BaseEntity {
     public Category getCategory() {
         return category;
     }
-
     public void setCategory(Category category) {
         this.category = category;
     }

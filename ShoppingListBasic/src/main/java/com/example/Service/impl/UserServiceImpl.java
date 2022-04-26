@@ -16,7 +16,6 @@ public class UserServiceImpl implements UserService {
         this.userRepository = userRepository;
         this.modelMapper = modelMapper;
     }
-
     @Override
     public UserServiceModel add(UserServiceModel userServiceModel) {
         User user = this.modelMapper.map(userServiceModel,User.class);

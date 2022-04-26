@@ -1,6 +1,7 @@
 package com.example.web;
 
 import com.example.Service.UserService;
+import com.example.model.binding.UserLoginBindingModel;
 import com.example.model.binding.UserRegisterBindingModel;
 import com.example.model.service.UserServiceModel;
 import org.modelmapper.ModelMapper;
@@ -17,7 +18,6 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping("/users")
 public class UserController {
-
     private final UserService userService;
     private final ModelMapper modelMapper;
 
@@ -27,31 +27,38 @@ public class UserController {
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
+    @PostMapping("/login")
+    public String loginConfirm(@Valid @ModelAttribute
+            ("userLoginBindingModel")UserLoginBindingModel userLoginBindingModel,BindingResult bindingResult
+    , RedirectAttributes redirectAttributes){
+        if (bindingResult.hasErrors()){
+            return "redirect:login";
+        }
+     return "index";
+    }
     @GetMapping("/register")
-    public String register(){
+    public String register() {
         return "register";
     }
-
     @PostMapping("/register")
     public String registerConfirm(@Valid @ModelAttribute
             ("userRegisterBindingModel") UserRegisterBindingModel
-                                              userRegisterBindingModel, BindingResult bindingResult,
-                                  RedirectAttributes redirectAttributes){
+                                          userRegisterBindingModel, BindingResult bindingResult,
+                                  RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors() || !userRegisterBindingModel.getPassword()
-                .equals(userRegisterBindingModel.getConfirmPassword())){
+                .equals(userRegisterBindingModel.getConfirmPassword())) {
             return "redirect:register";
         }
-
-         this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
-
+        this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
         return "redirect:/";
 
     }
+
 
 
 
