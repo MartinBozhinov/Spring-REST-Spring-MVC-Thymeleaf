@@ -2,6 +2,7 @@ package com.example.Service.impl;
 
 import com.example.Repository.UserRepository;
 import com.example.Service.UserService;
+import com.example.model.binding.UserLoginBindingModel;
 import com.example.model.entity.User;
 import com.example.model.service.UserServiceModel;
 import org.modelmapper.ModelMapper;
@@ -21,5 +22,11 @@ public class UserServiceImpl implements UserService {
         User user = this.modelMapper.map(userServiceModel,User.class);
         return this.modelMapper.map(this.userRepository.saveAndFlush(user),UserServiceModel.class);
 
+    }
+
+    @Override
+    public UserServiceModel findByUsername(String username) {
+        return this.userRepository.findByUsername(username)
+                .map(user -> this.modelMapper.map(user,UserServiceModel.class)).orElse(null);
     }
 }
