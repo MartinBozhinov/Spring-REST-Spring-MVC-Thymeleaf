@@ -4,6 +4,7 @@ import com.example.Repository.CategoryRepository;
 import com.example.Service.CategoryService;
 import com.example.model.entity.Category;
 import com.example.model.entity.CategoryName;
+import com.example.model.service.CategoryServiceModel;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
@@ -30,4 +31,14 @@ public class CategoryServiceImpl implements CategoryService {
                     });
         }
     }
+
+    @Override
+    public CategoryServiceModel findByName(CategoryName categoryName) {
+        return this.categoryRepository.findByName(categoryName)
+                .map(category -> this.modelMapper.map(category, CategoryServiceModel.class))
+                .orElse(null);
+
+    }
+
+
 }

@@ -12,7 +12,7 @@ public class ProductAddBindingModel {
 
     private String name;
     private String description;
-    private LocalDateTime neededBefore;
+    private String neededBefore;
     private BigDecimal price;
     private CategoryBindingModel category;
 
@@ -45,11 +45,11 @@ public class ProductAddBindingModel {
         this.price = price;
     }
 
-    public LocalDateTime getNeededBefore() {
+    public String getNeededBefore() {
         return neededBefore;
     }
 
-    public void setNeededBefore(LocalDateTime neededBefore) {
+    public void setNeededBefore(String neededBefore) {
         this.neededBefore = neededBefore;
     }
     @NotNull(message = "Category cannot be null")
