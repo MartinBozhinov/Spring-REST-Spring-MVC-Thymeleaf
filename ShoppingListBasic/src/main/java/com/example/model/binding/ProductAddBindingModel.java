@@ -1,6 +1,8 @@
 package com.example.model.binding;
 
 import com.example.model.entity.Category;
+import com.example.model.entity.CategoryName;
+import com.example.model.service.CategoryServiceModel;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.DecimalMin;
@@ -14,7 +16,7 @@ public class ProductAddBindingModel {
     private String description;
     private String neededBefore;
     private BigDecimal price;
-    private CategoryBindingModel category;
+    private CategoryName category;
 
     public ProductAddBindingModel() {
     }
@@ -53,11 +55,11 @@ public class ProductAddBindingModel {
         this.neededBefore = neededBefore;
     }
     @NotNull(message = "Category cannot be null")
-    public CategoryBindingModel getCategory() {
+    public CategoryName getCategory() {
         return category;
     }
 
-    public void setCategory(CategoryBindingModel category) {
+    public void setCategory(CategoryName category) {
         this.category = category;
     }
 }

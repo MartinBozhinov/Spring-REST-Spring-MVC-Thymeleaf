@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="921498ae-cdfc-46c7-ba2a-1b87392588fa" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/Repository/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/Repository/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/Service/impl/ProductServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/Service/impl/ProductServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/model/binding/CategoryBindingModel.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/model/binding/ProductAddBindingModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/model/binding/ProductAddBindingModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/model/service/ProductServiceModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/model/service/ProductServiceModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/web/ProductsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/java/com/example/web/ProductsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ShoppingListBasic/src/main/resources/templates/product-add.html" beforeDir="false" afterPath="$PROJECT_DIR$/ShoppingListBasic/src/main/resources/templates/product-add.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="28W0XQ7rwuCP3KfE3QexlrUo1Pv" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="921498ae-cdfc-46c7-ba2a-1b87392588fa" name="Changes" comment="" />
+      <created>1651317074150</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1651317074150</updated>
+      <workItem from="1651317075305" duration="3000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

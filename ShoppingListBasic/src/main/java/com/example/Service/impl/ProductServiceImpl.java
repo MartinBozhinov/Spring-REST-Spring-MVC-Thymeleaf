@@ -29,10 +29,11 @@ public class ProductServiceImpl implements ProductService {
         CategoryServiceModel categoryServiceModel =
                 this.categoryService.findByName(productServiceModel.getCategory().getName());
 
-        productServiceModel.setCategory(this.modelMapper.map(categoryServiceModel, Category.class));
+
+        productServiceModel.setCategory(categoryServiceModel);
 
         this.productRepository.saveAndFlush(this.modelMapper.map(productServiceModel, Product.class));
-        
+
 
     }
 }

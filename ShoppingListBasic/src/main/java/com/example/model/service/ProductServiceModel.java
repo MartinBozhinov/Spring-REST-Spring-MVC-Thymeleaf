@@ -11,8 +11,8 @@ public class ProductServiceModel extends BaseServiceModel {
     private String name;
     private String description;
     private BigDecimal price;
-    private String neededBefore;
-    private Category category;
+    private LocalDateTime neededBefore;
+    private CategoryServiceModel category;
 
     public ProductServiceModel() {
     }
@@ -41,19 +41,19 @@ public class ProductServiceModel extends BaseServiceModel {
         this.price = price;
     }
 
-    public String getNeededBefore() {
+    public LocalDateTime getNeededBefore() {
         return neededBefore;
     }
 
-    public void setNeededBefore(String neededBefore) {
+    public void setNeededBefore(LocalDateTime neededBefore) {
         this.neededBefore = neededBefore;
     }
 
-    public Category getCategory() {
+    public CategoryServiceModel getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(CategoryServiceModel category) {
         this.category = category;
     }
 }

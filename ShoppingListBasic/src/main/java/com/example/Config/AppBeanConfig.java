@@ -19,7 +19,7 @@ public class AppBeanConfig {
             @Override
             public LocalDateTime convert(MappingContext<String, LocalDateTime> mappingContext) {
                 return  LocalDateTime.parse(mappingContext.getSource(),
-                        DateTimeFormatter.ofPattern("yyyy-MM-dd hh:mm:ss"));
+                        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"));
 
             }
         });
