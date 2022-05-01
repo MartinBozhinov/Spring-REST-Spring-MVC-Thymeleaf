@@ -13,6 +13,11 @@ public class Category extends BaseEntity{
     public Category() {
     }
 
+    public Category(CategoryName categoryName, String format) {
+        this.name = categoryName;
+        this.description = format;
+    }
+
     @Enumerated(EnumType.ORDINAL)
     public CategoryName getName() {
         return name;
