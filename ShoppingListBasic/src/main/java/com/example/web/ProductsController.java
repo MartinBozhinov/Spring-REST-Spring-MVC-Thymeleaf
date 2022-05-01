@@ -44,6 +44,6 @@ public class ProductsController {
 
         this.productService.addProduct(this.modelMapper.map(productAddBindingModel, ProductServiceModel.class));
 
-        return "redirect:add";
+        return "redirect:/";
     }
 }
