@@ -4,5 +4,8 @@ import com.example.battleships.model.service.UserServiceModel;
 
 public interface UserService {
 
-   public UserServiceModel add(UserServiceModel userServiceModel);
+    UserServiceModel add(UserServiceModel userServiceModel);
+
+    UserServiceModel findByUserName(String username);
+
 }

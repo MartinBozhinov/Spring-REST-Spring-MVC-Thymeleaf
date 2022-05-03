@@ -1,6 +1,7 @@
 package com.example.battleships.web;
 
 import com.example.battleships.Service.UserService;
+import com.example.battleships.model.binding.UserLoginBindingModel;
 import com.example.battleships.model.binding.UserRegisterBindingModel;
 import com.example.battleships.model.service.UserServiceModel;
 import org.modelmapper.ModelMapper;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -27,8 +29,33 @@ public class UsersController {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login(@ModelAttribute("userLoginBindingModel") UserLoginBindingModel userLoginBindingModel) {
         return "login";
+    }
+
+    @PostMapping("/login")
+    public String loginConfirm(@Valid @ModelAttribute("userLoginBindingModel")
+                                       UserLoginBindingModel userLoginBindingModel,
+                               BindingResult bindingResult,
+                               HttpSession httpSession,
+                               RedirectAttributes redirectAttributes) {
+
+        if (bindingResult.hasErrors()) {
+            return "redirect:login";
+        }
+
+        UserServiceModel user = this.userService.findByUserName(userLoginBindingModel.getUsername());
+
+        if (user == null || !user.getPassword().equals(userLoginBindingModel.getPassword())){
+         redirectAttributes.addFlashAttribute("notFound", true);
+
+         return "redirect:login";
+        }
+
+        httpSession.setAttribute("user", user);
+
+        return "redirect:/";
+
     }
 
 
@@ -48,7 +75,7 @@ public class UsersController {
                 !userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
             return "redirect:register";
         }
-//        this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
-         return "redirect:/";
+        this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
+        return "redirect:login";
     }
 }
