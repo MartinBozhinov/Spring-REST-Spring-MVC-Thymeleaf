@@ -1,36 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Battleships Application</title>
-    <link rel="stylesheet" href="/css/reset-css.css"/>
-    <link rel="stylesheet" href="/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+    <th:block th:include="~{fragments/head}"></th:block>
 </head>
 <body class="body-main">
 <header>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top  rounded">
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home</a>
-                </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Register</a>
-                    </li>                
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Add Ship</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Logout</a>
-                    </li>
-            </ul>
-            <img width="50px" src="/images/ufo.png" alt="Ufo image">
-        </div>
+        <th:block th:include="~{fragments/nav}"></th:block>
     </nav>
 </header>
 <main role="main">
@@ -42,8 +18,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="container bg-blur rounded p-5 mt-5 w-75 ">
-
-                    <form  action="/" method=""
+                    <form  th:action="@{/users/login}" method="POST"
                           class="text-center text-light">
                         <h3 class="mt-5 text-center">
                             <strong class="rounded  pl-3 text-danger">Enter valid
@@ -88,7 +63,7 @@
     </div>
 </main>
 <footer class="container text-white">
-    <p>&copy;SoftUni Spring Team 2021. All rights reserved.</p>
+    <th:block th:include="~{fragments/footer}"></th:block>
 </footer>
 </body>
 </html>

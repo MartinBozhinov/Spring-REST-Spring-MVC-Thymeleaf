@@ -27,13 +27,13 @@ public class UsersController {
     }
 
     @GetMapping("/login")
-    public String login(){
+    public String login() {
         return "login";
     }
 
 
     @GetMapping("/register")
-    public String register(){
+    public String register(@ModelAttribute("userRegisterBindingModel") UserRegisterBindingModel userRegisterBindingModel) {
         return "register";
     }
 
@@ -42,13 +42,13 @@ public class UsersController {
     public String registerConfirm(@Valid @ModelAttribute
             ("userRegisterBindingModel") UserRegisterBindingModel userRegisterBindingModel,
                                   BindingResult bindingResult,
-                                  RedirectAttributes redirectAttributes){
+                                  RedirectAttributes redirectAttributes) {
 
         if (bindingResult.hasErrors() ||
-                !userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())){
+                !userRegisterBindingModel.getPassword().equals(userRegisterBindingModel.getConfirmPassword())) {
             return "redirect:register";
         }
-         this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
-        return "redirect:login";
+//        this.userService.add(this.modelMapper.map(userRegisterBindingModel, UserServiceModel.class));
+         return "redirect:/";
     }
 }

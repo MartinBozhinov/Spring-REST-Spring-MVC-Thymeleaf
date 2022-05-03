@@ -1,6 +1,6 @@
 package com.example.battleships.model.service;
 
-public class UserServiceModel {
+public class UserServiceModel extends BaseServiceModel {
 
     private String username;
     private String fullName;

@@ -16,7 +16,7 @@ public class UserRegisterBindingModel {
 
     public UserRegisterBindingModel() {
     }
-    @Length(min = 5,message = "Username length must be between 5 and 20 characters.")
+    @Length(min = 3 , max = 10,message = "Username length must be between 5 and 20 characters.")
     public String getUsername() {
         return username;
     }
@@ -24,7 +24,7 @@ public class UserRegisterBindingModel {
     public void setUsername(String username) {
         this.username = username;
     }
-    @Length(min = 2,message = "Enter valid full name")
+    @Length(min = 5,max = 20,message = "Enter valid full name")
     public String getFullName() {
         return fullName;
     }
@@ -40,7 +40,7 @@ public class UserRegisterBindingModel {
     public void setEmail(String email) {
         this.email = email;
     }
-    
+
     @Length(min = 3,message = "Password length must be more than 3 characters long")
     public String getPassword() {
         return password;
