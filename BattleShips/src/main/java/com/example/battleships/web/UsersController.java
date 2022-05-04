@@ -1,6 +1,6 @@
 package com.example.battleships.web;
 
-import com.example.battleships.Service.UserService;
+import com.example.battleships.service.UserService;
 import com.example.battleships.model.binding.UserLoginBindingModel;
 import com.example.battleships.model.binding.UserRegisterBindingModel;
 import com.example.battleships.model.service.UserServiceModel;

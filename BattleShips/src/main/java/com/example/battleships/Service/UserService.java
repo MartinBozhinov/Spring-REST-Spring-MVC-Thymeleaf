@@ -1,4 +1,4 @@
-package com.example.battleships.Service;
+package com.example.battleships.service;
 
 import com.example.battleships.model.service.UserServiceModel;
 

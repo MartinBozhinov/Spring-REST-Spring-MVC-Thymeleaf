@@ -1,6 +1,6 @@
 package com.example.battleships.init;
 
-import com.example.battleships.Service.CategoryService;
+import com.example.battleships.service.CategoryService;
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;

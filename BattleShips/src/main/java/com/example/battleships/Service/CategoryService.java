@@ -1,4 +1,4 @@
-package com.example.battleships.Service;
+package com.example.battleships.service;
 
 public interface CategoryService {
 

@@ -1,6 +1,6 @@
-package com.example.battleships.Service.impl;
+package com.example.battleships.service.impl;
 
-import com.example.battleships.Service.UserService;
+import com.example.battleships.service.UserService;
 import com.example.battleships.model.entity.User;
 import com.example.battleships.model.service.UserServiceModel;
 import com.example.battleships.repository.UserRepository;
