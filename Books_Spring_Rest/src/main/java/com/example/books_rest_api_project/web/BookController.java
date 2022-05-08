@@ -3,12 +3,11 @@ package com.example.books_rest_api_project.web;
 import com.example.books_rest_api_project.model.dto.BookDTO;
 import com.example.books_rest_api_project.service.BookService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import java.awt.desktop.OpenFilesEvent;
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 
@@ -42,6 +41,29 @@ public class BookController {
         }else{
             return ResponseEntity.ok(book.get());
         }
+    }
+
+
+    @PutMapping()
+    public ResponseEntity<BookDTO> create(@RequestBody BookDTO bookDTO
+            , UriComponentsBuilder uriComponentsBuilder){
+        long bookId = bookService.createBook(bookDTO);
+
+        URI location = uriComponentsBuilder.path("/books/{id}")
+                .buildAndExpand(bookId).toUri();
+
+        return ResponseEntity.created(location).build();
+
+
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<BookDTO> delete(@PathVariable("id") Long id){
+        bookService.deleteBook(id);
+
+        return ResponseEntity.noContent()
+                .build();
+
     }
 
 
