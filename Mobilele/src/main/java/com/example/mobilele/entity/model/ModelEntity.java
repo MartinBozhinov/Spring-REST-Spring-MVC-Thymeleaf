@@ -1,13 +1,13 @@
 package com.example.mobilele.entity.model;
 
-import com.example.mobilele.enums.Category;
+import com.example.mobilele.entity.model.enums.Category;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "models")
-public class Model extends BaseEntity{
+public class ModelEntity extends BaseEntity{
 
     private String name;
     private Category category;
@@ -16,11 +16,11 @@ public class Model extends BaseEntity{
     private Integer endYear;
     private LocalDateTime created;
     private LocalDateTime modified;
-    private Brand brand;
+    private BrandEntity brand;
 
-    public Model() {
+    public ModelEntity() {
     }
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     public String getName() {
         return name;
     }
@@ -76,12 +76,12 @@ public class Model extends BaseEntity{
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
     }
-
-    public Brand getBrand() {
+    @ManyToOne
+    public BrandEntity getBrand() {
         return brand;
     }
 
-    public void setBrand(Brand brand) {
+    public void setBrand(BrandEntity brand) {
         this.brand = brand;
     }
 }

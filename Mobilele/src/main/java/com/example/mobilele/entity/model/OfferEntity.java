@@ -1,16 +1,15 @@
 package com.example.mobilele.entity.model;
 
-import com.example.mobilele.enums.Engine;
-import com.example.mobilele.enums.Transmission;
+import com.example.mobilele.entity.model.enums.Engine;
+import com.example.mobilele.entity.model.enums.Transmission;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.Year;
 
 @Entity
 @Table(name = "offers")
-public class Offer extends BaseEntity{
+public class OfferEntity extends BaseEntity{
 
     private String description;
     private Engine engine;
@@ -21,12 +20,12 @@ public class Offer extends BaseEntity{
     private Integer year;
     private LocalDateTime created;
     private LocalDateTime modified;
-    private Model model;
-    private User seller;
+    private ModelEntity model;
+    private UserEntity seller;
 
-    public Offer() {
+    public OfferEntity() {
     }
-    @Column(name = "description")
+    @Column(name = "description",nullable = false)
     public String getDescription() {
         return description;
     }
@@ -98,20 +97,20 @@ public class Offer extends BaseEntity{
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
     }
-
-    public Model getModel() {
+    @ManyToOne
+    public ModelEntity getModel() {
         return model;
     }
 
-    public void setModel(Model model) {
+    public void setModel(ModelEntity model) {
         this.model = model;
     }
-
-    public User getSeller() {
+    @ManyToOne
+    public UserEntity getSeller() {
         return seller;
     }
 
-    public void setSeller(User seller) {
+    public void setSeller(UserEntity seller) {
         this.seller = seller;
     }
 }

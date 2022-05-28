@@ -1,24 +1,25 @@
 package com.example.mobilele.entity.model;
 
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "brands")
-public class Brand extends BaseEntity{
+public class BrandEntity extends BaseEntity{
 
 
     private String name;
     private LocalDateTime created;
     private LocalDateTime modified;
+    private List<ModelEntity> models = new ArrayList<>();
 
-    public Brand() {
+    public BrandEntity() {
     }
 
-    @Column(name = "name")
+    @Column(name = "name",nullable = false)
     public String getName() {
         return name;
     }
@@ -41,5 +42,14 @@ public class Brand extends BaseEntity{
 
     public void setModified(LocalDateTime modified) {
         this.modified = modified;
+    }
+
+    @OneToMany(mappedBy = "brand", fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    public List<ModelEntity> getModels() {
+        return models;
+    }
+
+    public void setModels(List<ModelEntity> models) {
+        this.models = models;
     }
 }
