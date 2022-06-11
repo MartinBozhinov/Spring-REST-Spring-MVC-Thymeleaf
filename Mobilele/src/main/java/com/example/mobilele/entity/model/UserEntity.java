@@ -23,57 +23,76 @@ public class UserEntity extends BaseEntity{
         return email;
     }
 
-    public void setEmail(String username) {
-        this.email = username;
-    }
+
     @Column(name = "password",nullable = false)
     public String getPassword() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
+
     @Column(name = "first_name",nullable = false)
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
+
     @Column(name = "last_name",nullable = false)
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+
     @Column(name = "is_active",nullable = false)
     public Boolean getActive() {
         return isActive;
     }
 
-    public void setActive(Boolean active) {
-        isActive = active;
-    }
 
-    @Column(name = "image_url",nullable = false)
+
+    @Column(name = "image_url")
     public String getImageUrl() {
         return imageUrl;
     }
 
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+
    @ManyToMany(fetch = FetchType.EAGER)
     public List<UserRoleEntity> getUserRole() {
         return userRole;
     }
 
-    public void setUserRole(List<UserRoleEntity> userRole) {
+    public UserEntity setEmail(String email) {
+        this.email = email;
+        return this;
+    }
+
+    public UserEntity setPassword(String password) {
+        this.password = password;
+        return this;
+    }
+
+    public UserEntity setFirstName(String firstName) {
+        this.firstName = firstName;
+        return this;
+    }
+
+    public UserEntity setLastName(String lastName) {
+        this.lastName = lastName;
+        return this;
+    }
+
+    public UserEntity setActive(Boolean active) {
+        isActive = active;
+        return this;
+    }
+
+    public UserEntity setUserRole(List<UserRoleEntity> userRole) {
         this.userRole = userRole;
+        return this;
+    }
+
+    public UserEntity setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+        return this;
     }
 
     public UserEntity addRole(UserRoleEntity userRole){
